@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block Title %}
+	{{webname}}-{{judul}}
+{% endblock Title %}
+
+{% block contents %}
+
+
+<div class="desktop">
+
+    <div class="topbar">
+        <h1 id="judul">{{judul}}</h1>
+        
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input id="fileinput" type="file" name="myfile" onchange="fileinp()">
+            <button id="filesubmit" type="submit" >Upload</button>
+        </form>
+        <p id="demo"></p>
+    </div>
+
+
+    <div class="cntn">
+
+        
+        <div class="cntn-bg">
+
+            {% if Score_by_different %}
+            <div class="output">
+                <div class="output-l">
+                    <h1>Input</h1>
+                    <p>{{text_inp}}</p>
+                </div>
+                <div class="output-r">
+                    <h1>Result</h1>
+                    <p>{{result}}</p>
+                </div>
+                <h1 id="scr_dif">Score by different: {{ Score_by_different }}%</h1>
+            </div>
+            {% endif %}
+            
+            <h1 id="cntn-bg-h1">Hoax Detector</h1>
+            <p id="cntn-bg-p">Detax, singkatan dari "Deteksi Hoax" adalah sistem yang dirancang dan dibangun dengan menggunakan teknologi terkini sebagai pendeteksi hoax yang akurat. Detax menawarkan kemudahan dalam penggunaan.
+
+                Kami percaya bahwa internet dapat menjadi tempat yang bebas hoax, sehat bagi kita semua. Detax mengajak kamu untuk turut serta mewujudkannya.
+                
+                Kini, setiap orang dapat turut berperan memerangi hoax dengan mudah.</p>
+            <a href="/hoax" id="cntn-bg-a">Lets try</a>
+            <img id="img-post" src="{% static 'img/logo1.png' %}">
+            <img id="img-post1" src="{% static 'img/logo1.png' %}">
+            
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="mobile">
+    <h1 id="judul">{{judul}}</h1>
+
+    <div>
+        <h1>{{content}}</h1>
+    </div>
+</div>
+
+<script type="text/javascript"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="{% static 'js/index.js' %}"></script>
+
+{% endblock contents %}
