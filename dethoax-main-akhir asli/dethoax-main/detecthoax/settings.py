@@ -13,7 +13,7 @@ SECRET_KEY = '%pdu3y7j3af!l#rv3hbk)c6^y8^py4!c@4(ol7aypheai60_fq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'testdomain.com' ]
+ALLOWED_HOSTS = ['127.0.0.1', 'https://hoaxdet.herokuapp.com/' ]
 
 
 # Application definition
